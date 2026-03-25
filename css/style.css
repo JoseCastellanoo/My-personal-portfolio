@@ -273,33 +273,102 @@ body.dark .contact h2 {
     color: #3a3a3af5;
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 30px 20px;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
+    padding: 0;
+  }
+
+  .logo a {
+    font-size: 2.5rem;
+  }
+
+  .logo p {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    width: 320px;
+    height: 360px;
+  }
+
+  .card {
+    width: 250px;
+    height: 300px;
+  }
+
+  .card.left {
+    transform: translate(-85%, -50%) scale(0.85);
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+
+  .skills-icons {
+    gap: 25px;
+  }
+
+  .skills-icons i {
+    font-size: 35px;
+  }
+
+  .contact-container {
+    gap: 20px;
+  }
+
+}
+
 /* MÓVIL */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 30px 20px;
+    gap: 40px;
+  }
+  
+  nav ul {
+    padding: 0;
+    gap: 15px;
   }
 
   .carousel-section h1 {
     font-size: 2.2rem;
   }
 
+  .about-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
   .carousel {
-    width: 300px;
-    height: 360px;
+    width: 280px;
+    height: 320px;
   }
 
   .card {
-    width: 180px;
+    width: 200px;
     height: 260px;
   }
 
   .card.left {
-    transform: translate(-90%, -50%) scale(0.82);
-  }
-
-  .about-text {
-    max-width: 100%;
+    transform: translate(-85%, -50%) scale(0.82);
   }
 }
