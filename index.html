@@ -6,25 +6,31 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=DM+Serif+Text:ital@0;1&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav>
+  <nav class="navbar">
     
+    <!-- IZQUIERDA -->
+     <div class="logo">
+      <a href="#home">Jose Castellano</a>
+      <p> < .. Frontend Developer .. > </p>
+     </div>
+     <!-- DERECHA -->
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#contact">Contact</a></li>
 
       <!-- botón -->
        <li>
-        <button id="theme-nigth">🌙</button>
+        <button id="theme-toggle">🌙</button>
        </li>
     </ul>
   </nav>
 
   <main class="hero">
     <div class="carousel-section">
-      <h1>Jose Castellano</h1>
 
       <div class="carousel-wrapper">
         <button class="nav-btn prev" id="prev">‹</button>
@@ -46,10 +52,10 @@
     <div class="about-text">
       <h2>About me</h2>
       <p>Full Stack Software Developer focused on web development.
-        Building projects using React.js, Node.js, JavaScript, TypeScript, Express,
-        PostgreSQL, and Docker. Passionate about coding and constantly learning new
-        technologies to grow as a developer. Continuously improving my English to collaborate
-        in international environments. 
+        Building projects using: <br>
+        • React.js, Node.js, JavaScript, TypeScript <br>
+        • PostgreSQL, and Docker <br>
+        • Continuous learning mindset
       </p>
     </div>
   </main>

@@ -15,6 +15,7 @@ const leftImage = document.querySelector(".card.left img");
 const title = document.querySelector(".about-text h2");
 const text = document.querySelector(".about-text p");
 
+
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
@@ -41,7 +42,7 @@ renderCarousel();
 
 
 
-const darkbtn = document.getElementById("theme-nigth");
+const darkbtn = document.getElementById("theme-toggle");
 
 darkbtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
