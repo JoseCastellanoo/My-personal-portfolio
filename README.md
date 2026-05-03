@@ -4,7 +4,7 @@ This is my personal portfolio website where I showcase my skills and projects as
 
 🚀 Live Demo:
 
--> https://josecastellanoo.github.io/My-personal-portfolio/
+-> https://josecastellanoo.github.io/
 
 🧠 About the Project
 This portfolio was built to present my work, skills, and contact information in a clean and modern way.

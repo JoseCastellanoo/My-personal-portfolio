@@ -1,13 +1,15 @@
 const images = [
   {
     src: "images/Me-portrait.png",
-    alt: "Main portrait",
+    alt: "Portrait of Jose Castellano",
   },
   {
     src: "images/6B617E92-634B-479F-B9E8-98FDA062E990.JPG",
     alt: "Secondary portrait",
   },
 ];
+
+const THEME_STORAGE_KEY = "portfolio-theme";
 
 let currentIndex = 0;
 
@@ -33,6 +35,37 @@ function renderCarousel() {
   leftImage.alt = previousImage.alt;
 }
 
+function updateThemeButton(isDark) {
+  if (!darkBtn) {
+    return;
+  }
+
+  darkBtn.textContent = isDark ? "☀️" : "🌙";
+  darkBtn.setAttribute("aria-pressed", String(isDark));
+  darkBtn.setAttribute("aria-label", isDark ? "Enable light mode" : "Enable dark mode");
+}
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+
+  document.body.classList.toggle("dark", isDark);
+  updateThemeButton(isDark);
+  localStorage.setItem(THEME_STORAGE_KEY, isDark ? "dark" : "light");
+}
+
+function loadTheme() {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || savedTheme === "light") {
+    setTheme(savedTheme);
+    return;
+  }
+
+  updateThemeButton(systemPrefersDark);
+  document.body.classList.toggle("dark", systemPrefersDark);
+}
+
 if (nextBtn) {
   nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % images.length;
@@ -47,11 +80,12 @@ if (prevBtn) {
   });
 }
 
-renderCarousel();
-
 if (darkBtn) {
   darkBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    darkBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    const nextTheme = document.body.classList.contains("dark") ? "light" : "dark";
+    setTheme(nextTheme);
   });
 }
+
+renderCarousel();
+loadTheme();
