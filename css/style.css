@@ -187,6 +187,14 @@ nav ul a:hover {
   filter: grayscale(100%);
 }
 
+/* TARJETA DERECHA */
+.card.right {
+  transform: translate(-5%, -50%) scale(0.88);
+  z-index: 1;
+  opacity: 0.45;
+  filter: grayscale(100%);
+}
+
 #theme-toggle {
   border: none;
   background: var(--surface-alt);
@@ -366,6 +374,10 @@ body.dark .contact-icon:hover {
     transform: translate(-85%, -50%) scale(0.85);
   }
 
+  .card.right {
+    transform: translate(-15%, -50%) scale(0.85);
+  }
+
   .about-text {
     max-width: 100%;
   }
@@ -495,6 +507,12 @@ body.dark .contact-icon:hover {
     transform: translate(-85%, -50%) scale(0.85);
   }
 
+  .card.right {
+    z-index: 1;
+    opacity: 0.35;
+    transform: translate(-15%, -50%) scale(0.85);
+  }
+
   .nav-btn {
     width: 38px;
     height: 38px;
@@ -505,7 +523,10 @@ body.dark .contact-icon:hover {
   .about-text {
     width: 100%;
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .about-text h2 {
@@ -521,6 +542,8 @@ body.dark .contact-icon:hover {
 
   .about-list {
     text-align: left;
+    align-self: flex-start;
+    margin: 0 auto;
   }
 
   .skills {

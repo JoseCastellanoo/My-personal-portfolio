@@ -4,8 +4,12 @@ const images = [
     alt: "Portrait of Jose Castellano",
   },
   {
-    src: "images/6B617E92-634B-479F-B9E8-98FDA062E990.JPG",
+    src: "images/IMG_0104.JPG",
     alt: "Secondary portrait",
+  },
+  {
+    src: "images/IMG_9541.jpg",
+    alt: "Workspace Mac portrait",
   },
 ];
 
@@ -15,24 +19,29 @@ let currentIndex = 0;
 
 const centerImage = document.querySelector(".card.center img");
 const leftImage = document.querySelector(".card.left img");
+const rightImage = document.querySelector(".card.right img");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const darkBtn = document.getElementById("theme-toggle");
 
 function renderCarousel() {
-  if (!centerImage || !leftImage || images.length === 0) {
-    return;
-  }
+  if (!centerImage || !leftImage || images.length === 0) return;
+  
 
   const prevIndex = (currentIndex - 1 + images.length) % images.length;
+  const nextIndex = (currentIndex + 1) % images.length;
   const currentImage = images[currentIndex];
   const previousImage = images[prevIndex];
+  const nextImage = images[nextIndex];
 
   centerImage.src = currentImage.src;
   centerImage.alt = currentImage.alt;
 
   leftImage.src = previousImage.src;
   leftImage.alt = previousImage.alt;
+
+  rightImage.src = nextImage.src;
+  rightImage.alt = nextImage.alt;
 }
 
 function updateThemeButton(isDark) {
